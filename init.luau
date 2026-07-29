@@ -168,7 +168,7 @@ function NumberFormat.toSeconds(time: string): number
 	for value, unit in stripped:gmatch("(%d+)(%a)") do
 		local multiplier = timePatterns[unit]
 		if multiplier ~= nil then
-			seconds += tonumber(value)! * multiplier
+			seconds += (tonumber(value) :: number) * multiplier
 		end
 	end
 
